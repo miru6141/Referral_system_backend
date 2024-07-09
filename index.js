@@ -33,7 +33,7 @@ app.post('/referral', async (req, res) => {
         });
 
         // Send referral email
-        await sendReferralEmail(newReferral, res);
+      //  await sendReferralEmail(newReferral, res);
 
         res.status(201).json(newReferral);
     } catch (error) {
@@ -52,7 +52,7 @@ app.get('/referrals', async (req, res) => {
 });
 
 // Function to send referral email
-async function sendReferralEmail(referral, res) {
+/*async function sendReferralEmail(referral, res) {
     const { GMAIL_USER, GMAIL_PASS } = process.env;
     
     let config = {
@@ -108,7 +108,7 @@ async function sendReferralEmail(referral, res) {
         console.error("Error sending email:", error);
         res.status(500).json({ error: 'Failed to send email' });
     }
-}
+}*/
 
 // Error handling middleware
 app.use((err, req, res, next) => {
