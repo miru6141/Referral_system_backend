@@ -37,7 +37,7 @@ app.post('/referral', async (req, res) => {
 
         res.status(201).json(newReferral);
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Internal server err' });
     }
 });
 
