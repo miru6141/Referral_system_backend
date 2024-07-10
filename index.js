@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
 const Mailgen = require('mailgen');
-const { withAccelerate } = require ('@prisma/extension-accelerate')
+const  { withAccelerate } = require ('@prisma/extension-accelerate')
 
 const prisma = new PrismaClient().$extends(withAccelerate())
 
@@ -33,8 +33,11 @@ app.post('/referral', async (req, res) => {
         // Create new referral
         const newReferral = await prisma.referral.create({
             data: { name, email, phone, message },
-        });
+          
 
+        });
+       
+        
         // Send referral email
         await sendReferralEmail(newReferral, res);
 
