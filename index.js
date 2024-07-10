@@ -1,13 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client/edge');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
 const Mailgen = require('mailgen');
+const { withAccelerate } = require ('@prisma/extension-accelerate')
+
+const prisma = new PrismaClient().$extends(withAccelerate())
 
 const app = express();
-const prisma = new PrismaClient();
+
 
 app.use(cors({
     origin: 'http://localhost:5173',
