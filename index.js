@@ -4,7 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import referral from './referralroutes.js'
 const app = express();
-const DB_URL='mongodb://127.0.0.1:27017/referral'
+const DB_URL=process.env.DB_URL || 'mongodb://127.0.0.1:27017/referral'
 mongoose.connect(DB_URL);
 
 
