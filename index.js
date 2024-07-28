@@ -9,7 +9,7 @@ mongoose.connect(DB_URL);
 
 
 app.use(cors({
-    origin: 'https://referralsystem13.netlify.app/',
+    origin: 'https://referralsystem13.netlify.app',
     credentials: true
 }));
 
